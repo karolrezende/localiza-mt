@@ -94,7 +94,7 @@ export function Search({ onSearch, className }: SearchProps) {
       )}
     >
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-        <div className="relative flex-1">
+        <div className="relative flex-1 min-w-0">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
           <Input
             aria-label="Pesquisar por nome"
@@ -105,12 +105,12 @@ export function Search({ onSearch, className }: SearchProps) {
           />
         </div>
 
-        <div className="flex gap-2 justify-end">
+        <div className="flex flex-wrap gap-2 sm:flex-nowrap sm:justify-end">
           <Button
             type="button"
             variant="outline"
             onClick={() => setAdvancedOpen((v) => !v)}
-            className="gap-2"
+            className="gap-2 w-full sm:w-auto"
           >
             <SlidersHorizontal className="h-4 w-4" />
             Filtros
@@ -131,13 +131,13 @@ export function Search({ onSearch, className }: SearchProps) {
             type="button"
             variant="outline"
             onClick={handleReset}
-            className="gap-2"
+            className="gap-2 w-full sm:w-auto"
           >
             <X className="h-4 w-4" />
             Limpar
           </Button>
 
-          <Button type="submit" className="gap-2">
+          <Button type="submit" className="gap-2 w-full sm:w-auto">
             <SearchIcon className="h-4 w-4" />
             Buscar
           </Button>
@@ -175,7 +175,7 @@ export function Search({ onSearch, className }: SearchProps) {
           value={gender}
           onValueChange={(v: "MASCULINO" | "FEMININO") => setGender(v)}
         >
-          <SelectTrigger aria-label="Sexo">
+          <SelectTrigger aria-label="Sexo" className="w-full">
             <SelectValue placeholder="Sexo" />
           </SelectTrigger>
           <SelectContent>
@@ -188,7 +188,7 @@ export function Search({ onSearch, className }: SearchProps) {
           value={status}
           onValueChange={(v: "DESAPARECIDO" | "LOCALIZADO") => setStatus(v)}
         >
-          <SelectTrigger aria-label="Status">
+          <SelectTrigger aria-label="Status" className="w-full">
             <SelectValue placeholder="Status" />
           </SelectTrigger>
           <SelectContent>
