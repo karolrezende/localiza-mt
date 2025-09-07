@@ -1,7 +1,7 @@
 # Localiza MT
 
 Aplicação **Next.js** para consulta de pessoas desaparecidas.
-Disponível em: https://localiza-mt-git-main-karolrezendes-projects.vercel.app/
+Disponível em: https://localiza-mt.vercel.app
 ---
 
 ## 👤 Autor
