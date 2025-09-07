@@ -125,7 +125,6 @@ export function PersonDetails({ id }: Props) {
             Voltar
           </Link>
 
-          {/* habilitado para abrir o modal */}
           <Button
             type="button"
             variant="secondary"
@@ -138,7 +137,6 @@ export function PersonDetails({ id }: Props) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
-          {/* Galeria */}
           <div className="flex flex-col gap-4">
             <div className="relative rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 aspect-[4/3]">
               {mainSrc ? (
@@ -182,7 +180,6 @@ export function PersonDetails({ id }: Props) {
             </div>
           </div>
 
-          {/* Detalhes */}
           <div className="flex flex-col">
             <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900">
               {person.name}

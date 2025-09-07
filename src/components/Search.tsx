@@ -93,7 +93,6 @@ export function Search({ onSearch, className }: SearchProps) {
         className
       )}
     >
-      {/* Linha principal: busca + ações */}
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
         <div className="relative flex-1">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
@@ -145,7 +144,6 @@ export function Search({ onSearch, className }: SearchProps) {
         </div>
       </div>
 
-      {/* Filtros avançados */}
       <div
         className={cn(
           "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-3 sm:mt-4",
