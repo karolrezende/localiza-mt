@@ -171,7 +171,10 @@ export function Search({ onSearch, className }: SearchProps) {
           onChange={(e) => setMaxAge(e.target.value)}
         />
 
-        <Select value={gender} onValueChange={(v) => setGender(v as any)}>
+        <Select
+          value={gender}
+          onValueChange={(v: "MASCULINO" | "FEMININO") => setGender(v)}
+        >
           <SelectTrigger aria-label="Sexo">
             <SelectValue placeholder="Sexo" />
           </SelectTrigger>
@@ -181,7 +184,10 @@ export function Search({ onSearch, className }: SearchProps) {
           </SelectContent>
         </Select>
 
-        <Select value={status} onValueChange={(v) => setStatus(v as any)}>
+        <Select
+          value={status}
+          onValueChange={(v: "DESAPARECIDO" | "LOCALIZADO") => setStatus(v)}
+        >
           <SelectTrigger aria-label="Status">
             <SelectValue placeholder="Status" />
           </SelectTrigger>

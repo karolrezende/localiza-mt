@@ -1,3 +1,4 @@
+// components/AddInfoModal.tsx
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -28,13 +29,16 @@ export function AddInfoModal({ open, onOpenChange }: Props) {
   const [previews, setPreviews] = useState<string[]>([]);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
+  // gera/limpa Object URLs
   useEffect(() => {
     const urls = files.map((f) => URL.createObjectURL(f));
     setPreviews(urls);
     return () => urls.forEach((u) => URL.revokeObjectURL(u));
   }, [files]);
 
+  // ---- RESET TOTAL ----
   const resetForm = () => {
+    // revoga previews atuais antes de limpar
     previews.forEach((u) => URL.revokeObjectURL(u));
     setSeenAt("");
     setSeenDate("");
@@ -45,6 +49,7 @@ export function AddInfoModal({ open, onOpenChange }: Props) {
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
+  // intercepta mudança de open (close por X/overlay/esc)
   const handleOpenChange = (next: boolean) => {
     if (!next) resetForm();
     onOpenChange(next);
@@ -73,6 +78,7 @@ export function AddInfoModal({ open, onOpenChange }: Props) {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              // enviar ficará desabilitado por enquanto
             }}
             className="mt-4 space-y-4"
           >

@@ -12,7 +12,7 @@ export default function HomePage() {
   const [isPaging, startTransition] = useTransition();
 
   const { data, isLoading } = useGetAll({
-    ...(filters as any),
+    ...filters,
     page,
     perPage: 12,
   });
